@@ -1,0 +1,104 @@
+body {
+  background: linear-gradient(135deg, #89f7fe, #66a6ff); /* Soft blue gradient */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Glass effect */
+  backdrop-filter: blur(10px);
+  color: #333;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+  border-radius: 2rem;
+  border: none;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 10px #66a6ff;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+  border-radius: 2rem;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5);
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(45deg, #7873f5, #ff6ec4);
+  transform: scale(1.05);
+}
+
+.btn-warning {
+  border-radius: 2rem;
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+  color: #fff;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+  transform: scale(1.07);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light {
+  border-radius: 2rem;
+  color: #fff;
+  border-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+h2, h5 {
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.alert {
+  border-radius: 0.75rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.link-glow {
+  color: #fff;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+}
+
+.link-glow:hover {
+  text-shadow: 0 0 8px #fff;
+  color: #fff;
+}
