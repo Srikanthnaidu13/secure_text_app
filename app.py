@@ -112,18 +112,12 @@ from flask import request
 def set_user():
     username = request.form.get('username')
     password = request.form.get('password')
-    user_ip = request.remote_addr
 
-    # ✅ Admin login with IP restriction
-    allowed_admin_ips = ['127.0.0.1', '::1', '192.168.29.179']
+    # ✅ Admin login (no IP restriction)
     if username == 'srikanth130404' and password == '2815':
-        if user_ip in allowed_admin_ips:
-            session.clear()
-            session['admin'] = True
-            return redirect('/admin')
-        else:
-            session['login_error'] = f'❌ Admin login only from authorized system. Your IP: {user_ip}'
-            return redirect('/')
+        session.clear()
+        session['admin'] = True
+        return redirect('/admin')
 
     # ✅ Regular user login
     conn = sqlite3.connect('messages.db')
@@ -153,6 +147,7 @@ def set_user():
 
     conn.close()
     return redirect('/')
+
 
 @app.route('/ajax_login', methods=['POST'])
 def ajax_login():
